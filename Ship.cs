@@ -727,6 +727,17 @@ namespace EVE.ISXEVE
 		{
 			return _oreHoldCargo ?? (_oreHoldCargo = Util.GetListFromMethod<IItem>(this, "GetOreHoldCargo", "item"));
 		}
+		
+		private List<IItem> _fleetHangarCargo;
+
+		/// <summary>
+		/// Wrapper for the GetFleetHangarCargo method of the ship type
+		/// </summary>
+		/// <returns></returns>
+		public List<IItem> GetFleetHangarCargo()
+		{
+			return _fleetHangarCargo ?? (_fleetHangarCargo = Util.GetListFromMethod<IItem>(this, "GetFleetHangarCargo", "item"));
+		}
 		#endregion
 
 		#region Drone
