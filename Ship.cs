@@ -738,11 +738,22 @@ namespace EVE.ISXEVE
 		{
 			return _fleetHangarCargo ?? (_fleetHangarCargo = Util.GetListFromMethod<IItem>(this, "GetFleetHangarCargo", "item"));
 		}
-		#endregion
 
-		#region Drone
+        private List<IItem> _fuelBayCargo;
 
-		private double? _droneBayCapacity;
+        /// <summary>
+        /// Wrapper for the GetFleetHangarCargo method of the ship type
+        /// </summary>
+        /// <returns></returns>
+        public List<IItem> GetFuelBayCargo()
+        {
+            return _fuelBayCargo ?? (_fuelBayCargo = Util.GetListFromMethod<IItem>(this, "GetFuelHoldCargo", "item"));
+        }
+        #endregion
+
+        #region Drone
+
+        private double? _droneBayCapacity;
 		/// <summary>
 		/// Wrapper for the DronebayCapacity member of the ship type.
 		/// </summary>
